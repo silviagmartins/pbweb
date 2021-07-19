@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos em JavaScript - Array
+    </title>
+</head>
+
+<body>
+    <h2>Array em JavaScript</h2>
+    <p>Os itens de um Array são acessados por meio de um índice .</p>
+    <p id="resultado"></p>
+    <script>
+        //Criando um array com valores
+        //const carros = ['Fiat', 'Volvo', 'BMW'];
+        
+        //Criando um Array vazio e inserido os elementos usando atribuições
+        const carros = [];
+        carros[0]= 'Honda';
+        carros[1]= 'Toyota';
+        carros[2]= 'Kia';
+        
+        //Inserindo elementos em um Array
+        //Inserindo um valor usando o length
+        carros[carros.length] = "Cherry";
+        // usando push - insere no fim do array
+        carros.push("Suzuki");
+        //usando o unshift - insere no inicio do array
+        carros.unshift("Hyundai");
+
+        //removendo elementos do vetor
+        //Usando o pop - remove o último
+        carros.pop();
+        //Usando o shift - remove o primeiro elemento
+        carros.shift();
+        
+
+        //Acessando o primeiro item do array
+        //document.getElementById('resultado').innerHTML = carros[0];
+
+        //Acessando o ultimo item do array
+        //document.getElementById('resultado').innerHTML =carros[carros.length - 1];
+
+        //Acessando o array todo
+        //document.getElementById('resultado').innerHTML = carros;
+
+        //Percorrendo um Array usando o for
+        var texto = "";
+        for (var i = 0; i < carros.length; i++) {
+            texto += carros[i] + "<br>";
+        }
+        document.getElementById("resultado").innerHTML = texto;
+
+    </script>
+</body>
+</html>

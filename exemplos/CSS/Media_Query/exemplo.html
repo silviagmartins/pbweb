@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exemplo de pagina responsiva</title>
+    
+    <style>
+        * {
+            margin:0;
+            padding: 0;
+        }
+
+        body {
+            
+            font-family: arial, helvetica, sans-serif;
+            font-size: 1.2em;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        p{
+            line-height: 1.1em;
+        }
+
+        p+p{
+            text-indent: 1.5em;
+            margin-top: 1.5em;
+
+        }
+
+        #navegacao-principal {
+            position: relative;
+            font-family: monospace;
+            float: left;
+            display: block;
+            width: 100%;
+            margin-left:0px;
+
+        }
+
+        #menu-principal {
+            list-style: none;
+            padding-left: 0;
+            margin-left:0px;
+        }
+
+        #menu-principal li {
+            background-color: #333;
+            float: left;
+            padding: 1rem;
+            position: relative;
+            transition-duration: 0.5s;
+        }
+
+        #menu-principal li a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            text-decoration: none;
+            list-style: none;
+            visibility: hidden;
+            opacity: 0;
+            min-width: 5rem;
+            position: absolute;
+            transition: all 0.5s ease;
+            margin-top: 1rem;
+            left: 0;
+            display: none;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown li {
+            clear: both;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .dropdown li a {
+            text-decoration: none;
+            text-align: right;
+        }
+
+
+        #menu-principal li:hover,
+        #menu-principal li:focus-within {
+            background-color: #4CAF50;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #menu-principal li a:hover {
+            color: #F00;
+        }
+
+        /*Controla a exibição do dropdown*/
+        #menu-principal li:hover>ul,
+        #menu-principal li:focus-within>ul,
+        .dropdown ul:hover,
+        .dropdown ul:focus {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+        }
+
+        /*Ajustar o contudo para Smartphones*/
+        @media screen and (max-width:480px){
+            body {
+                max-width: 480px;
+                font-size: 1.0em;
+            }
+
+            #menu-principal {
+                width: auto;
+                height: auto;
+                background-color: rgb(204, 60, 60);
+            }
+
+            #menu-principal li {
+                background-color:tomato;
+                text-decoration: none;
+                width: 100%;
+                float: none;
+            }
+
+            #menu-principal li a {
+                color: #FFF;
+                text-align: left;
+                display: block;
+                outline: none;
+            }
+            #menu-principal li:hover,
+            #menu-principal li:focus-within,
+            #menu-principal li a:hover {
+                cursor: pointer;
+                font-weight: bold;
+                color: #F00;
+                background-color:  rgb(230, 140, 140);                
+                transition: 0.3s;
+                left:10px;
+            }
+            .dropdown {
+                position: static;
+                left:0px;
+                background-color: rgb(204, 60, 60);
+                list-style: none;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav id="navegacao-principal">
+        <ul id="menu-principal">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre Mim</a>
+                <ul class="dropdown">
+                    <li><a href=“#">Meus Projetos</a></li>
+                    <li><a href=“#">Meu Currículo</a></li>
+                    <li><a href=“#">Meus Hobbies</a></li>
+                </ul>
+            </li>
+            <li><a href=“#">Entre em contato</a>
+                <ul class="dropdown">
+                    <li><a href=“#">Meus Projetos</a></li>
+                    <li><a href=“#">Meu Currículo</a></li>
+                    <li><a href=“#">Meus Hobbies</a></li>
+                </ul>
+            </li>
+            <li><a href=“#">Redes Sociais</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h1>User Experience</h1>
+        <p>Tornando a vida dos usuários mais simples!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque commodo bibendum diam, in pretium quam bibendum vitae. Duis et porta mauris, sed tincidunt sem. Fusce augue tortor, luctus ut scelerisque at, euismod ut nunc. Nulla cursus ex in lorem venenatis fringilla. Nunc et est sed tellus elementum eleifend. Integer ut nulla enim. Donec a purus sit amet ligula porttitor placerat. Morbi eget congue nisi. Nulla in eros viverra, rhoncus orci non, pellentesque orci. Sed efficitur, nisi quis rutrum sollicitudin, magna neque aliquet nisi, sed sodales lorem augue tincidunt turpis. Integer porta mauris non lobortis vehicula. Nam maximus leo ligula, sed tempor libero tristique eu. Aliquam scelerisque a purus vitae feugiat. Cras fringilla quam sed tellus blandit, id pharetra augue sollicitudin. Quisque iaculis dictum sagittis.</p>
+        <p>Ut ornare dapibus lectus nec egestas. Phasellus sodales erat eu sollicitudin auctor. Pellentesque maximus nisl justo, sit amet tempor ante finibus nec. Fusce vestibulum dignissim metus et finibus. Donec in nunc eu dui cursus aliquet. Integer ac ultrices nisi, sit amet eleifend sapien. Maecenas lobortis, nibh quis maximus molestie, nisl magna ornare elit, vitae aliquam enim felis varius lectus. Mauris finibus, mi nec laoreet maximus, dolor massa condimentum neque, eu lobortis elit erat nec ante. Morbi faucibus eget nibh sit amet pharetra.</p>
+        <p>Donec ornare elit mauris, eu consequat elit lobortis vitae. Vestibulum tristique pellentesque congue. Integer ac purus finibus, pretium mauris quis, sollicitudin urna. Vestibulum aliquet felis vel nunc semper, sit amet porttitor magna congue. Aliquam eget tristique leo. Cras tempor lectus sit amet placerat mollis. Etiam et massa faucibus, molestie magna ac, volutpat nibh. Phasellus auctor pharetra dui ut vulputate. Curabitur nulla mauris, vehicula quis finibus et, iaculis quis velit.</p>
+        <p>
+            Vamos aos fatos:
+        </p>
+        <img id="usabilidade-ruim" src="img/BadExperience.gif" alt="O usuário não precisa pensar...">
+        <p></p>
+        <img srcset="img/highlander360w.jpg 360w,
+                    img/highlander480w.jpg 480w,
+                     img/highlander800w.jpg 800w,
+                     img/highlander1920w.jpeg 1920w"
+             sizes="(max-width: 480px) 360px,
+                    (max-width: 800px) 480px,
+                    (max-width: 1280px) 800px,
+                    1280px"
+             src="img/highlander1920w.jpeg"
+             alt="O filme do ID!">
+        <p>Proin fringilla diam mauris, ut interdum ipsum tincidunt quis. Vivamus vitae ante odio. Suspendisse a lectus quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec sodales eu justo et malesuada. In nisl lorem, mollis vel imperdiet quis, placerat id quam. Fusce faucibus nibh non odio iaculis condimentum. Sed lobortis lacus eget fringilla dapibus. Praesent tempor erat iaculis, maximus eros non, mattis sapien.</p>
+        <p>Proin nec velit mattis est luctus sodales eget nec ipsum. Morbi sit amet nulla eu nibh varius posuere. Praesent nisl risus, maximus non ante eget, rutrum bibendum augue. Fusce magna tellus, auctor id finibus auctor, tempor et ipsum. Ut egestas mauris justo, tincidunt mollis libero tincidunt quis. Phasellus eu ex maximus, fermentum nisl a, volutpat enim. Mauris id mauris est. Curabitur ac risus ipsum. Aliquam blandit congue orci, quis porttitor diam hendrerit at</p>
+        
+        
+
+    </section>
+</body>
+
+</html>

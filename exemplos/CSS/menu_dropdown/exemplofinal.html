@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+        *{margin: 0; padding: 0;}
+
+        body{
+            font-family: arial, helvetica, sans-serif;
+            font-size: 100%;
+        }
+
+        #navegacao-principal {
+            position: relative;
+            font-family: monospace;
+            float:left;
+            width: 100%;
+        }
+
+        #menu-principal {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        #menu-principal li {
+            background-color: #333;
+            display: block;
+            float: left;
+            padding: 1rem;
+            position: relative;
+            text-decoration: none;
+            transition-duration: 0.5s;
+        }
+
+        #menu-principal li a{
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            visibility: hidden;
+            opacity: 0;
+            min-width: 5rem;
+            position: absolute;
+            transition: all 0.5s ease;
+            margin-top: 1rem;
+            left: 0;
+            display: none;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        }
+
+        .dropdown li{
+            clear: both;
+            width: 100%;
+        }
+
+        #menu-principal li:hover,
+        #menu-principal li:focus-within {
+            background-color: #4CAF50;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        #menu-principal li a:hover {
+            color: #F00;
+        }
+
+        /*Controla a exibição do dropdown*/
+        #menu-principal li:hover>ul,
+        #menu-principal li:focus-within>ul,
+        .dropdown ul:hover,
+        .dropdown ul:focus {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <nav id="navegacao-principal">
+        <ul id="menu-principal">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre Mim</a>
+            <ul class="dropdown">
+                <li><a href=“#">Meus Projetos</a></li>
+                <li><a href=“#">Meu Currículo</a></li>
+                <li><a href=“#">Meus Hobbies</a></li>
+            </ul></li>
+            <li><a href=“#">Entre em contato</a>
+            <ul class="dropdown">
+                <li><a href=“#">Meus Projetos</a></li>
+                <li><a href=“#">Meu Currículo</a></li>
+                <li><a href=“#">Meus Hobbies</a></li>
+            </ul></li>
+            <li><a href=“#">Redes Sociais</a></li>
+        </ul>
+    </nav>
+    <h1>O começo de tudo é sempre o fim de alguma coisa...</h1>
+    <p>Nada do que foi será de novo do jeito que já foi um dia..</p>
+    <p>
+        Vamos aos fatos:
+    </p>
+    <ul>
+        <li>Razão 1</li>
+        <li>Razão 1</li>
+        <li>Razão 1</li>
+        <li>Razão 1</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de repetição em JavaScript</title>
+</head>
+
+<body>
+    <h2>Um exemplo com a instrução continue</h2>
+    <p>Nesse exemplo, quando i = 7, o valor de i, não será impresso</p>
+    <p id="resultado"></p>
+    <script>
+        var texto = "";
+        for (i = 0; i < 10; i++) {
+            if (i === 5) { continue; }
+            texto += "O valor do i é... " + i + "<br>";
+        }
+        document.getElementById("resultado").innerHTML = texto;
+
+    </script>
+
+</body>
+
+</html>

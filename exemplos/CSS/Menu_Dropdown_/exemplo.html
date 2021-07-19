@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: arial, helvetica, sans-serif;
+            font-size: 100%;
+        }
+
+        /* Configurações gerais da área de navegação*/
+        nav.area-de-navegacao {
+            font-family: monospace;
+            border: 0px solid #c0c0c0;
+            float: left;
+            font-size: 62.5%;
+            background-color: #4CAF50;
+        }
+
+        .area-de-navegacao a{
+            float: left;
+            font-size: 16px;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: #ccc;
+        }
+
+
+
+        /*Define o acontece quando o cursor está
+        sobre o menu o um dos seus itens*/
+        li:hover,
+        li:focus-within {
+            background-color: #4CAF50;
+            cursor: pointer;
+            font-weight: bold;
+            color: #F00;
+            transition: 0.3s;
+            -moz-box-shadow: 0 3px 10px 0 #CCC;
+            -webkit-box-shadow: 0 3px 10px 0 #ccc;
+        }
+
+        li:focus-within a {
+            outline: none;
+        }
+
+        /*Configurações gerais do dropdown*/
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown:focus {
+            visibility: visible;
+            opacity: 1;
+            display: block
+        }
+
+        .area-de-navegacao a:hover, 
+        .area-de-navegacao a:focus-within 
+        {
+            font-weight: bold;
+            color: #F00;
+            transition: 0.3s;
+            -moz-box-shadow: 0 3px 10px 0 #CCC;
+            -webkit-box-shadow: 0 3px 10px 0 #ccc;
+
+        }
+
+        a:hover, a:focus-within {
+
+            background-color: #4CAF50;
+            cursor: pointer;
+
+        }
+
+        article {
+            padding: 16px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav role="navigation" class="area-de-navegacao">
+            <a href="#">Home</a>
+            <a href="#" aria-haspopup="true">Sobre Mim</a>
+            <div class="dropdown" aria-label="submenu">
+                <a href="#">Meu Curriculo</a>
+                <a href="#">Meus projetos</a>
+            </div>
+            <a href="#">Entre contato</a>
+        </nav>
+        <h1>
+            Minha super página WEB
+        </h1>
+    </header>
+    <article>
+        <p>
+            dsdsfsdfdsf
+            sdfdfsdfdsf
+            sdfdsfdsfdsfdsf
+            sdfdfsdfdsf
+        </p>
+        <p>
+            dsdsfsdfdsf
+            sdfdfsdfdsf
+            sdfdsfdsfdsfdsf
+            sdfdfsdfdsf
+        </p>
+        <p>
+            dsdsfsdfdsf
+            sdfdfsdfdsf
+            sdfdsfdsfdsfdsf
+            sdfdfsdfdsf
+        </p>
+
+
+    </article>
+</body>
+
+</html>

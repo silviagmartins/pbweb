@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizador de mesada</title>
+
+</head>
+<body>
+    <label for="quintal-check">O quintal está limpo? </label>
+    <input type="checkbox" id="quintal-check">
+
+    <p></p>
+
+    <script>
+      const checkBox = document.querySelector('input');
+      const paragrafo = document.querySelector('p');
+      let quintalLimpo = false;
+      checkBox.onchange = function() {
+        quintalLimpo = checkBox.checked;
+        if(quintalLimpo === true) {
+          var mesada = 25;
+        } else {
+          var mesada = 10;
+        }
+        paragrafo.textContent = 'Vou ganhar R$' + mesada + ' nessa semana!';
+      };
+      if(quintalLimpo === true) {
+          var mesada = 25;
+        } else {
+          var mesada = 10;
+        }
+        paragrafo.textContent = 'Vou ganhar R$' + mesada + ' nessa semana!';
+    </script>
+  </body>
+</html>

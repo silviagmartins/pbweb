@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudando a cor da pagina</title>
+</head>
+<body>
+    <label for="Tema">Escolha um tema para a página </label>
+    <select id="Tema">
+      <option value="claro">Claro</option>
+      <option value="escuro">Escuro</option>
+    </select>
+
+    <h1>Seja bem vindo!</h1>
+
+    <script>
+      const select = document.querySelector('select');
+      const html = document.querySelector('html');
+
+      select.onchange = function() {
+        select.value === 'escuro' ? update('black','white') : update('white','black');
+      }
+
+      function update(bgColor, textColor) {
+        html.style.backgroundColor = bgColor;
+        html.style.color = textColor;
+      }
+    </script>
+  </body>
+</html>
