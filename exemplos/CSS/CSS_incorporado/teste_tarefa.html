@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="formulario.css"> -->
+    <title>formulario de contato</title>
+    <style>
+        #formulario{
+            /*centraliza o form na pagina*/ 
+            margin: 0 auto;
+            width: 350px;
+            /*contorno do form*/
+            padding:lem;
+            border: 2px solid #ccc;
+            border-radius: 1em;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        form li+li{
+            margin-top: lem;
+        }
+
+        label{
+            /*tamanho e alinhamento uniforme */
+            display: inline-block;
+            width: 150px;
+            text-align: right;
+        }
+
+        input,
+        textarea{
+        /*Garante que todos os campos de texto tem a mesma fonte*/
+        font: lem sans-serif;
+
+        /* uniformiza o tamanho do campode texto */
+        width: 100px;
+        box-sizing: border-box;
+        /*igualar borda dos campos do formulário*/
+        border: 1px solid #999;
+        }
+
+        input:focus,
+        textarea:focus{
+        /*adiciona destaque para o elemento quando ele recebe o foco*/
+        border-color: #000;
+        }
+        textarea{
+            /*alinha campos de texto multiline com os seus labels */
+            vertical-align: top;
+
+            /*fornece espaço para digitar algum texto */
+           height: 5em;
+        }
+
+        h1{
+            text-align: center;
+            font-size: 30px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Formulario de contato</h1>
+    <form id="formulario" action=""> 
+        <ul> 
+            <li>
+                <label for="nome">Nome do usuário</label>
+                <input type="text"  id="nome" name="nomeUsuario">
+            </li>
+            <li>
+                <label for="Emailusuario">Email</label>
+                <input type="text"  id="Email" name="Emailusuario">
+            
+            </li>
+            
+        <li>
+            <label for="txtMensagem">Mensagem</label>
+            <textarea name="txtMensagem" id="txtMensagem" cols="placeholder" rows="4"></textarea>
+        </li>
+        </ul>
+        <br>
+        <input type="submit" value="logar">
+    
+    </form>
+</body>
+</html>
+
+
+
+
+

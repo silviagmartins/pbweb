@@ -1,0 +1,71 @@
+.item1 {
+    grid-area: header;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.item2 {
+    grid-area: menu;
+}
+
+.item3 {
+    grid-area: main;
+}
+
+.item4 {
+    grid-area: right;
+}
+
+.item5 {
+    grid-area: footer;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        'header header header header header header'
+        'main main main main right right'
+        'footer footer footer footer footer footer';
+    gap: 0px;
+    /* Espaço entre os itens do Grid*/
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container header {
+
+}
+
+.grid-container footer{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.menuPrincipal li{
+    /* buscar uma maneira para fazer o ajuste do tamanho da fonte*/
+    display: inline-block;
+    text-shadow: 1px 1px 1px;
+    list-style: none;
+    border: 1px solid white;
+}
+
+.menuPrincipal li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    color: white;
+    background: rgba(78, 72, 72, 0.3);
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.menuPrincipal li a:hover{
+    background: rgba(78, 72, 72, 0.7);
+}
+
+article {
+    font-size: 1em; /* estudar melhor o em*/
+}
