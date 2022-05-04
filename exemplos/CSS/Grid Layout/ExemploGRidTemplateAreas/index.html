@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como usar o Grid Layout</title>
+    <style>
+        /* Zerar todas as margens */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        /* Cria o container que funciona como GRID */
+        #pagina{
+            display: grid;
+            gap: 10px;
+            grid-template-rows: auto 60px 20px;
+            /* grid-template-areas: none; */
+
+            grid-template-areas: 
+            "a a a a"
+            "b c c c"
+            "d c c c";
+
+            /* Alterando o posicionamento dos itens no grid
+            grid-template-areas: 
+            "c c a"
+            "c c b"
+            "c c d"; */
+
+            /* grid-template-areas: 
+            "a a a"
+            "c . b"
+            "c d ."; */
+        }
+            #a{
+                grid-area: a;
+                color: black;
+                background-color: aqua;
+            }
+
+            #b{
+                grid-area: b;
+                background-color: blueviolet;
+            }
+            #c{
+                grid-area: c;
+                background-color: chocolate;
+            }
+
+            #d{
+                grid-area: d;
+                background-color: deeppink;
+            }
+
+    </style>
+</head>
+<body>
+    <main id="pagina">
+        <header id="a">
+            A
+        </header>
+        <article id="b">
+            B
+        </article>
+        <aside id="c">
+            C
+        </aside>
+        <footer id="d">
+            D
+        </footer>
+    </main>
+</body>
+</html>

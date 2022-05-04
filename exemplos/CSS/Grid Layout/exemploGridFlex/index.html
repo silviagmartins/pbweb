@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como usar o Grid Layout</title>
+    <style>
+        /* Zerar todas as margens */
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: arial;
+            font-size: calc(16px + (8/1200) * 100 * 1vw);
+        }
+
+        /* Cria o container que funciona como GRID */
+        #pagina {
+            display: grid;
+            gap: 0;
+            background-color: antiquewhite;
+        }
+
+        #cabecalho {
+            background-color: #0a1445;
+            display: flex;
+            justify-content: space-between;
+            padding: 5px;
+            align-items: center;
+            flex-wrap: wrap;
+            flex: 1 1 50px;
+        }
+
+        #cabecalho h1 {
+            font-size: 1.3rem;
+            color: white;
+        }
+
+        #logo {
+            max-width: 10%;
+        }
+
+        #menu {
+            margin: 0px;
+            padding: 0px;
+            /* font-size: 0.8rem; */
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+        }
+
+        #menu a {
+            font-size: 0.6rem;
+            text-decoration: none;
+            padding: 5px;
+            margin: 0%;
+            display: block;
+            color: whitesmoke;
+        }
+
+        #conteudo {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 5px;
+            max-width: 100%;
+            line-height: calc(1ex / 0.32);
+        }
+
+        .conteudo_principal {
+            background-color: lightgrey;
+            color: black;
+            font-size-adjust: 0.5;
+            text-indent: 5%;
+            flex: 1 1 480px;
+        }
+
+        .conteudo_extra {
+            background-color: lightgrey;
+            color: black;
+        }
+
+        #rodape {
+            color: white;
+            background-color: darkolivegreen;
+        }
+
+        @media screen and (min-width: 480px) {
+
+            #pagina{
+                            grid-template-areas:
+                "a"
+                "b"
+                "c"
+                "d";
+
+            }
+
+
+            #cabecalho {
+                grid-area: a;
+            }
+
+            #conteudo {
+                grid-area: b;
+
+            }
+
+
+            .conteudo_principal {
+                /* flex: 3; */
+                /* min-height: 92vh; */
+                /* min-width: 50%; */
+                /* width: 69%; */
+            }
+
+            .conteudo_extra {
+                /* flex: 1; */
+                /* min-width: 30%; */
+                /* width: 29%; */
+            }
+
+
+            #rodape {
+                grid-area: d;
+            }
+
+        }
+
+        @media screen and (max-width: 480px) {
+
+            #pagina{
+                            grid-template-areas:
+                "a"
+                "b"
+                "c";
+            }
+
+            #cabecalho {
+                grid-area: a;
+                /* position: fixed;
+                top: 0px; */
+            }
+
+            .conteudo_principal {
+                grid-area: b;
+            }
+
+            /* .conteudo_extra {
+                grid-area: c;
+            } */
+
+            .rodape {
+                grid-area: d;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main id="pagina">
+        <header id="cabecalho">
+            <img id="logo" src="../../../../imagens/html.png" alt="Logo do HTML">
+            <h1>Titulo da página</h1>
+            <nav>
+                <ul id="menu">
+                    <li><a href="">Opção1</a></li>
+                    <li><a href="">Opção2</a></li>
+                    <li><a href="">Opção3</a></li>
+                    <li><a href="">Opção4</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="conteudo">
+            <article class="conteudo_principal">
+                <h2>Conteúdo da página ( ARTICLE )</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis magna dui, nec ornare ipsum
+                    auctor at. Aliquam nisi est, placerat viverra lobortis sit amet, auctor eu risus. Sed quis convallis
+                    tellus. Suspendisse lacus nulla, lacinia vitae dolor vitae, bibendum dapibus sapien. Cras luctus
+                    sapien non nulla convallis hendrerit. Nulla vel ornare leo, ut convallis turpis. Morbi sodales
+                    pretium consectetur. Vestibulum efficitur aliquam augue, nec vestibulum nunc viverra sit amet. Proin
+                    blandit finibus imperdiet. Sed et semper tellus. Aenean vel elit eget nulla sodales facilisis nec ut
+                    nulla. Donec egestas velit erat, vitae tempor risus consequat at. Pellentesque eget pellentesque
+                    magna.</p>
+                <p>Vestibulum vel arcu erat. Mauris venenatis augue est, in bibendum metus lacinia eu. Cras interdum
+                    gravida lacus sed
+                    ullamcorper. In et gravida metus. Vivamus ornare tellus metus, at dictum neque condimentum a. Nulla
+                    pretium quis sem non
+                    mattis. Vivamus pulvinar imperdiet tortor a dictum. Duis mattis finibus nunc nec pretium. Fusce
+                    fermentum mauris vitae
+                    ante efficitur dictum. Suspendisse eget volutpat leo. Class aptent taciti sociosqu ad litora
+                    torquent per conubia
+                    nostra, per inceptos himenaeos. Aliquam pellentesque nibh ac neque rhoncus, at fringilla dui
+                    consectetur. Donec nec
+                    faucibus odio. Maecenas egestas porta dui sed blandit.</p>
+                <p>Etiam ultrices quam eget pulvinar pharetra. Duis eu magna lectus. Maecenas sit amet elit nulla.
+                    Vivamus condimentum
+                    blandit magna, sed pulvinar leo aliquam ut. Aliquam erat volutpat. Quisque convallis turpis sem, sed
+                    suscipit erat
+                    porttitor in. Aliquam sed auctor lectus, sed pharetra massa. Pellentesque tristique neque et
+                    ultricies euismod.
+                    Curabitur congue viverra est, sed condimentum odio volutpat quis. Integer sit amet ultrices nulla.
+                    Aenean mi lorem,
+                    eleifend eget lobortis eleifend, tincidunt id ligula. Etiam vitae diam lectus. Nunc et metus
+                    porttitor, tristique ante
+                    vitae, varius enim. Donec scelerisque nibh ac ullamcorper maximus. Donec commodo volutpat quam, id
+                    fermentum velit
+                    commodo in. Nam vitae erat id ex luctus ultricies.</p>
+                <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi eros
+                    urna, malesuada
+                    posuere dui sed, imperdiet volutpat mauris. Mauris blandit mollis viverra. Proin sed venenatis sem.
+                    Suspendisse potenti.
+                    Morbi aliquet metus massa, at elementum nulla porttitor convallis. Donec quis pulvinar sapien.
+                    Mauris sollicitudin
+                    rhoncus tincidunt. Vivamus tempor non elit nec vulputate. Nulla sollicitudin mi metus, non dapibus
+                    nunc accumsan ac.
+                    Mauris vel enim vitae arcu congue placerat in eu neque. Aliquam vel auctor massa.</p>
+                <p>Sed congue finibus est, ut ornare orci laoreet ac. Nunc aliquet bibendum tellus et luctus. Morbi
+                    tristique eros non eros
+                    molestie, eu lacinia tortor scelerisque. Vestibulum egestas dictum risus, interdum scelerisque lorem
+                    efficitur et.
+                    Aliquam egestas, nisi sit amet finibus ullamcorper, quam diam dictum nibh, commodo pretium arcu urna
+                    sit amet leo.
+                    Phasellus et vestibulum libero. Vestibulum at condimentum ligula, at dapibus massa. Phasellus nec
+                    lectus mattis dolor
+                    venenatis viverra. Sed vitae tempus odio. Donec posuere nulla ac quam egestas, sed fringilla purus
+                    mattis. Suspendisse
+                    quis purus diam. Vivamus fermentum nec sapien a porta. In massa velit, pretium in egestas nec,
+                    elementum ut sem.</p>
+            </article>
+            <!-- <aside class="conteudo_extra">
+                Conteúdo associado ( ASIDE )
+            </aside> -->
+            <article class="conteudo_principal">
+                <h2>outro conteúdo</h2>
+                <p>Sed congue finibus est, ut ornare orci laoreet ac. Nunc aliquet bibendum tellus et luctus. Morbi
+                    tristique eros non eros
+                    molestie, eu lacinia tortor scelerisque. Vestibulum egestas dictum risus, interdum scelerisque lorem
+                    efficitur et.
+                    Aliquam egestas, nisi sit amet finibus ullamcorper, quam diam dictum nibh, commodo pretium arcu urna
+                    sit amet leo.
+                    Phasellus et vestibulum libero. Vestibulum at condimentum ligula, at dapibus massa. Phasellus nec
+                    lectus mattis dolor
+                    venenatis viverra. Sed vitae tempus odio. Donec posuere nulla ac quam egestas, sed fringilla purus
+                    mattis. Suspendisse
+                    quis purus diam. Vivamus fermentum nec sapien a porta. In massa velit, pretium in egestas nec,
+                    elementum ut sem.</p>
+            </article>
+            <article class="conteudo_principal">
+                <h2>Novo conteúdo</h2>
+                <p>Sed congue finibus est, ut ornare orci laoreet ac. Nunc aliquet bibendum tellus et luctus. Morbi
+                    tristique eros non eros
+                    molestie, eu lacinia tortor scelerisque. Vestibulum egestas dictum risus, interdum scelerisque lorem
+                    efficitur et.
+                    Aliquam egestas, nisi sit amet finibus ullamcorper, quam diam dictum nibh, commodo pretium arcu urna
+                    sit amet leo.
+                    Phasellus et vestibulum libero. Vestibulum at condimentum ligula, at dapibus massa. Phasellus nec
+                    lectus mattis dolor
+                    venenatis viverra. Sed vitae tempus odio. Donec posuere nulla ac quam egestas, sed fringilla purus
+                    mattis. Suspendisse
+                    quis purus diam. Vivamus fermentum nec sapien a porta. In massa velit, pretium in egestas nec,
+                    elementum ut sem.</p>
+            </article>
+            <article class="conteudo_principal">
+                <h2>Novo conteúdo</h2>
+                <p>Sed congue finibus est, ut ornare orci laoreet ac. Nunc aliquet bibendum tellus et luctus. Morbi
+                    tristique eros non eros
+                    molestie, eu lacinia tortor scelerisque. Vestibulum egestas dictum risus, interdum scelerisque lorem
+                    efficitur et.
+                    Aliquam egestas, nisi sit amet finibus ullamcorper, quam diam dictum nibh, commodo pretium arcu urna
+                    sit amet leo.
+                    Phasellus et vestibulum libero. Vestibulum at condimentum ligula, at dapibus massa. Phasellus nec
+                    lectus mattis dolor
+                    venenatis viverra. Sed vitae tempus odio. Donec posuere nulla ac quam egestas, sed fringilla purus
+                    mattis. Suspendisse
+                    quis purus diam. Vivamus fermentum nec sapien a porta. In massa velit, pretium in egestas nec,
+                    elementum ut sem.</p>
+            </article>
+            <article class="conteudo_principal">
+                <h2>Novo conteúdo</h2>
+                <p>Sed congue finibus est, ut ornare orci laoreet ac. Nunc aliquet bibendum tellus et luctus. Morbi
+                    tristique eros non eros
+                    molestie, eu lacinia tortor scelerisque. Vestibulum egestas dictum risus, interdum scelerisque lorem
+                    efficitur et.
+                    Aliquam egestas, nisi sit amet finibus ullamcorper, quam diam dictum nibh, commodo pretium arcu urna
+                    sit amet leo.
+                    Phasellus et vestibulum libero. Vestibulum at condimentum ligula, at dapibus massa. Phasellus nec
+                    lectus mattis dolor
+                    venenatis viverra. Sed vitae tempus odio. Donec posuere nulla ac quam egestas, sed fringilla purus
+                    mattis. Suspendisse
+                    quis purus diam. Vivamus fermentum nec sapien a porta. In massa velit, pretium in egestas nec,
+                    elementum ut sem.</p>
+            </article>
+            <article class="conteudo_principal">
+                <h2>Novo conteúdo</h2>
+                <p>Sed congue finibus est, ut ornare orci laoreet ac. Nunc aliquet bibendum tellus et luctus. Morbi
+                    tristique eros non eros
+                    molestie, eu lacinia tortor scelerisque. Vestibulum egestas dictum risus, interdum scelerisque lorem
+                    efficitur et.
+                    Aliquam egestas, nisi sit amet finibus ullamcorper, quam diam dictum nibh, commodo pretium arcu urna
+                    sit amet leo.
+                    Phasellus et vestibulum libero. Vestibulum at condimentum ligula, at dapibus massa. Phasellus nec
+                    lectus mattis dolor
+                    venenatis viverra. Sed vitae tempus odio. Donec posuere nulla ac quam egestas, sed fringilla purus
+                    mattis. Suspendisse
+                    quis purus diam. Vivamus fermentum nec sapien a porta. In massa velit, pretium in egestas nec,
+                    elementum ut sem.</p>
+            </article>
+
+        </section>
+        <footer id="rodape">
+            rodapé da página ( FOOTER )
+        </footer>
+    </main>
+</body>
+
+</html>

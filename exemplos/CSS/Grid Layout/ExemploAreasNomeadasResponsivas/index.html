@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como usar o Grid Layout</title>
+    <style>
+        /* Zerar todas as margens */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Passo1: Criar o Grid*/
+        .pagina {
+            display: grid;
+            grid-template-areas: "h" "m" "c" "ca" "r";
+        }
+
+        .header {
+            grid-area: h;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            align-content: space-around;
+            justify-content: space-between;
+        }
+
+        .titulo {
+            color: white;
+            background-color: #369;
+            flex-grow: 1;
+        }
+
+        .logo {
+            background-color: #369;
+            display: block;
+            width: 72px;
+            flex-grow: 0;
+        }
+
+        .menuPrincipal {
+            color: white;
+            background-color: #f90;
+            grid-area: m;
+        }
+
+        .conteudo {
+            background-color: lightgrey;
+            color: black;
+            grid-area: c;
+        }
+
+        .conteudo_extra {
+            color: white;
+            background-color: grey;
+            grid-area: ca;
+        }
+
+        .rodape {
+            color: white;
+            background: green;
+            grid-area: r;
+        }
+
+        @media screen and (min-width: 480px) {
+            .pagina {
+                grid-template-areas: "h h h"
+                    "m c ca" 
+                    "r r r";
+            }
+
+            .titulo {
+                justify-self: stretch;
+            }
+
+            .logo {
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <main class="pagina">
+
+        <header class="header">
+            <img class="logo"
+                src="https://emojipedia-us.s3.amazonaws.com/thumbs/120/facebook/111/crystal-ball_1f52e.png"
+                alt="heart" />
+            <h1 class="titulo">O titulo pode ser grande </h1>
+        </header>
+            <nav class="menuPrincipal">
+                Menu Principal ( NAV )
+            </nav>
+        <article class="conteudo">
+            Conteúdo da página ( ARTICLE )
+        </article>
+        <aside class="conteudo_extra">
+            Conteúdo associado ( ASIDE )
+        </aside>
+        <footer class="rodape">
+            rodapé da página ( FOOTER )
+        </footer>
+    </main>
+</body>
+
+</html>
