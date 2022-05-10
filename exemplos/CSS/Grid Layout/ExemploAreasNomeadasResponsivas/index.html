@@ -11,34 +11,35 @@
         * {
             padding: 0;
             margin: 0;
+            font-family: 'Quicksand', sans-serif;
         }
 
         /* Passo1: Criar o Grid*/
         .pagina {
             display: grid;
             grid-template-areas: "h" "m" "c" "ca" "r";
+            grid-template-rows: 1fr 1fr 6fr 1fr 1fr;
+            row-gap: 5px;
+            height: 100vh;
         }
 
         .header {
             grid-area: h;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
             align-content: space-around;
-            justify-content: space-between;
+            /* justify-content: space-between; */
+            background-color: #369;
         }
 
         .titulo {
             color: white;
-            background-color: #369;
-            flex-grow: 1;
         }
 
         .logo {
-            background-color: #369;
             display: block;
             width: 72px;
-            flex-grow: 0;
         }
 
         .menuPrincipal {
@@ -67,18 +68,31 @@
 
         @media screen and (min-width: 480px) {
             .pagina {
-                grid-template-areas: "h h h"
-                    "m c ca" 
+                grid-template-areas: "h h m"
+                    "c c ca"
                     "r r r";
+                grid-template-rows: 1fr 8fr 1fr;
+                row-gap: 10px;
+                column-gap: 10px;
+                grid-template-columns: 1fr 4fr 2fr;                
             }
+        .header {
+            flex-direction: row;
+        }
 
-            .titulo {
-                justify-self: stretch;
+        @media screen and (min-width: 768px) {
+            .pagina {
+                grid-template-areas: "h h h"
+                    "m c ca"
+                    "r r r";
+                grid-template-rows: 1fr 8fr 1fr;
+                row-gap: 10px;
+                column-gap: 10px;
+                grid-template-columns: 1fr 4fr 2fr;                
             }
-
-            .logo {
-            }
-
+        .header {
+            flex-direction: row;
+        }
 
 
         }
